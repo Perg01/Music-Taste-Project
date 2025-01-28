@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist Information</title>
+</head>
+<body>
+    <h1>Artist Information</h1>
+    <p>Name: <%= artist.name %></p>
+    <p>Genre: <%= artist.genres[0] %></p>
+    <p>Popularity: <%= artist.popularity %></p>
+    <p>Followers: <%= artist.followers.total %></p>
+    <img src="<%= artist.images[0].url %>" alt="Artist Image">
+    
+    <h2>Top 5 Tracks</h2>
+    <% for(let i = 0; i < 5; i++) { %>
+        <ul>
+            <p> <%= i + 1 %>. <%= topTracks.tracks[i].name  %></p>
+        </ul>
+    <% }; %>
+    
+    <h2>Albums</h2>
+    <% for(let i = 0; i < 3; i++) { %>
+        <h3><%= albums.items[i].name %></h3>
+        <img src="<%= albums.items[i].images[0].url %>" alt="">
+    <% }; %>
+    
+
+</body>
+</html>
